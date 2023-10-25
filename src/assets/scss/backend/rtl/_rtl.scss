@@ -1,0 +1,17 @@
+@import "./rtl-button.scss";
+[dir=rtl] {
+    body {
+        text-align: right;
+    }
+    @import "./components/components.scss";
+    @import "./pages/pages.scss";
+    @import "./app/chat.scss";
+    @import "./app/email.scss";
+    @import "./app/todo.scss";
+    @import "./widget/widget-simple.scss";
+    @import "./page-content/form-data.scss";
+    @import "./page-content/form-validation.scss";
+    @import "./wizard/simple-wizard.scss";
+    @import "./wizard/vertical-wizard.scss";
+    @import "./wizard/validate-wizard.scss";
+}

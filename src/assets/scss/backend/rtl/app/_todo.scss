@@ -1,0 +1,71 @@
+.iq-todo-page {
+	.search-link {
+
+		right: 10px;
+
+		left: auto;
+	}
+
+	.todo-search {
+		padding-right: 35px;
+		padding-left: 0px;
+	}
+
+	ul {
+
+
+		ul {
+			li {
+				a {
+					padding-right: 25px;
+					padding-left: 0px;
+				}
+			}
+		}
+
+	}
+
+}
+
+.todo-task-lists
+	{
+		text-align: right;
+	}
+
+.iq-todo-right {
+	.search-link {
+
+		right: 10px;
+
+		left: auto;
+	}
+
+	.todo-search {
+		padding-right: 35px;
+		padding-left: 0px;
+	}
+}
+
+.notification-icon {
+	>span {
+
+		right: auto;
+		left: -8px;
+	}
+}
+
+.iq-todo-friendlist {
+	.suggestions-lists {
+		text-align: right;
+	}
+}
+
+
+#todo-task1{
+.badge-danger
+{
+    float: left !important;
+}
+
+
+}

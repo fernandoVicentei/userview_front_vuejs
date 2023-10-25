@@ -1,0 +1,58 @@
+.profile-icon.iq-icon-box {
+	height: 58px;
+	width: 58px;
+	line-height: 58px;
+	text-align: center;
+	margin-right: 10px;
+	font-size: 26px;
+	text-decoration: none;
+}
+
+.profile-overly {
+	position: absolute;
+	left: auto;
+	bottom: 0;
+	right: 0;
+	background: $white;
+	padding: 10px 30px;
+	text-align: center;
+	border-radius: 10px 10px 0 0;
+}
+
+ul.iq-contact-rest {
+	li {
+		a {
+			p {
+				word-break: break-all;
+			}
+		}
+	}
+}
+
+.crm-p-image {
+	width: 35px;
+	height: 35px;
+	font-size: 10px;
+	line-height: 32px;
+	border-radius: 50%;
+	transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+	border: 5px solid #fff;
+	top: auto;
+	left: 69px;
+	bottom: -9px;
+}
+
+.crm-p-image,
+.profile-overly {
+	position: absolute;
+	text-align: center;
+}
+
+
+@media(max-width:479px) {
+	.profile-overly {
+		h3 {
+			font-size: 14px;
+		}
+	}
+}

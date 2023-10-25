@@ -1,0 +1,23 @@
+
+.col-sm-12.rtl-side{
+	text-align: right;
+}
+
+
+.offset-lg-8.col-lg-4 {
+.or-detail.rounded{
+   text-align: right;
+
+}
+}
+
+@media(max-width:479px){
+	.header-invoice {
+		display: block !important;
+		text-align: center;
+		.invoice-btn{
+			margin-top: 15px;
+		}
+	}
+}
+

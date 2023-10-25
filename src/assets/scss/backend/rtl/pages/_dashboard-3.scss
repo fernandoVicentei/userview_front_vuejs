@@ -1,0 +1,169 @@
+
+.fixed-top-navbar {
+	.change-mode {
+		margin-left: 13px;
+		margin-right: auto;
+	}
+	
+
+	.content-page {
+		margin-right: 0px;
+		margin-left: 0px;
+
+		.card.rtl-card {
+			text-align: right;
+		}
+	
+		
+
+	}
+
+}
+
+.fixed-top-navbar {
+	.iq-footer {
+		.list-inline {
+			text-align: right;
+		}
+	}
+}
+
+#layout-3-chart-03
+{
+    direction: ltr;
+}
+.card-invoice {
+	padding: 40px 20px;
+	width: 33.33%;
+	margin-left: 15px;
+	border: 1px solid;
+}
+.payment-detail {
+	border-radius: 10px;
+}
+.apexcharts-legend-marker{
+	margin-left: 3px;
+	margin-right: auto;
+}
+
+
+
+@media (min-width:1300px) {
+    .fixed-top-navbar {
+		.iq-top-navbar {
+			.iq-menu-bt {
+				padding: 0;
+				margin: 0!important;
+			}
+		}
+		.iq-page-menu-horizontal {
+			.content-page {
+				margin-right: 0px;
+				padding: 100px 50px 0px;
+			}
+		}
+	}
+
+
+// fixed sidemneu
+.dashboard3-fixed-menu {
+	
+	right: 30px;
+	left: auto;
+	.dashboard3-info {
+		
+		
+		ul {
+			li {
+				
+				
+				&:last-child {
+					padding: 5px 0;
+				}
+				
+			}
+		}
+	}
+}
+
+}
+
+@media (max-width:1299px) {
+    .fixed-top-navbar {
+		.iq-top-navbar {
+			.iq-menu-bt {
+				padding: 0;
+			}
+		}
+		
+	}
+
+	.fixed-top-navbar.sidebar-main {
+		.iq-menu-horizontal {
+			@include opacity-mixin(1);
+			right: 0;
+			left: auto;
+			z-index: 10;
+			@if $enable-transitions == true {
+				@include transition-mixin(all 0.3s ease-in-out);
+			}
+			@include radius-mixin(0);
+		}
+		.iq-menu-horizontal {
+			.iq-sidebar-menu {
+				.iq-menu {
+					li {
+						a {
+							padding: 15px 15px 15px 19px;
+						}
+					}
+				}
+			}
+		}
+	
+				
+	}
+
+}
+
+
+
+
+
+
+@media (max-width: 991px){
+    .fixed-top-navbar {
+		.change-mode {
+			margin-left: 13px;
+			margin-right: auto;
+		}
+	}
+   
+  
+
+}
+@media (max-width: 767px){
+    .card-invoice{
+        width: 100%;
+	}
+	.fixed-top-navbar {
+		.block-rate{
+			h4{
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px){
+    #layout-3-chart-03{
+            .apexcharts-legend {
+                inset: auto 0px -3px 10px !important;
+            }
+    }
+      .iq-sidebar-logo {
+        img {
+            height: 50px;
+        }
+    }
+}

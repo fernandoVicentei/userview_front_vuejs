@@ -1,0 +1,34 @@
+.jvectormap-zoomin,
+.jvectormap-zoomout,
+.jvectormap-goback {
+    left: auto;
+    right: 10px;
+}
+
+.jvectormap-legend-cnt-h .jvectormap-legend {
+    float: right;
+    margin: 10px 0px 10px 10px;
+}
+
+.jvectormap-legend-cnt-h {
+    right: auto;
+    left: 0px;
+}
+
+.jvectormap-legend-cnt-v {
+
+    left: 0px;
+    right: auto;
+}
+
+.jvectormap-legend-cnt-v .jvectormap-legend {
+    margin: 10px 0px 10px 10px;
+}
+
+.card-header.rtl-title {
+    .card-title {
+
+        text-align: right;
+
+    }
+}

@@ -1,0 +1,44 @@
+@keyframes animate-stripes {
+	100% {
+		background-position: -100px 0;
+	}
+}
+
+
+
+.profile-card {
+	&:before {
+		left: -63px;
+		right: auto;
+		transform: rotate(-36deg);
+	}
+	&:after {
+		right: -62px;
+		left: auto;
+		transform: rotate(-28deg);
+	}
+}
+
+
+.social-ic {
+	a {
+		&:before {
+			right: 0;
+			left: auto;
+		}
+		&:nth-child(even) {
+			&:hover {
+				&:before {
+					top: 0;
+				}
+			}
+		}		
+	}
+}
+
+.iq-progress-bar-linear {
+	text-align: right;
+	.float-right {
+		float: left !important;
+	}
+}

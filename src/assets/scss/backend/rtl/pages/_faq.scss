@@ -1,0 +1,31 @@
+.iq-accordion.career-style.faq-style {
+	.accordion-title {
+		&:before {
+			left: 15px;
+			right: auto;
+		}
+	}
+}
+.active-faq {
+	a.accordion-title {
+	
+		padding-right: 0px;
+		padding-left: 45px;
+	}
+}
+
+
+.iq-accordion.career-style.faq-style {
+	.iq-accordion-block {
+		
+		.accordion-details {
+			p {
+				padding-left: 0px;
+				
+				padding-right: 15px;
+			}
+		}
+	
+		}
+	
+}

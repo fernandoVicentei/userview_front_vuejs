@@ -1,0 +1,55 @@
+.br-theme-bars-1to10 {
+	.br-widget {
+		height: 50px;
+		white-space: nowrap;
+		a {
+			display: block;
+			width: 12px;
+			padding: 5px 0;
+			height: 28px;
+			float: right;
+			background-color: #ddd;
+			margin: 1px;
+			text-align: center;
+		}
+	
+		.br-current-rating {
+			font-size: 20px;
+			line-height: 2;
+			float: left;
+			color: $primary;
+			font-weight: 400;
+		}
+	}
+	
+}
+
+
+.br-theme-bars-movie {
+	.br-widget {
+		white-space: nowrap;
+		a {
+			display: block;
+			width: 60px;
+			height: 10px;
+			float: right;
+			background-color: transparent;
+			border: 1px solid $primary;
+			margin: 1px;
+		}
+		
+		.br-current-rating {
+			clear: both;
+			width: 240px;
+			text-align: center;
+			font-weight: 600;
+			display: block;
+			padding-top: .5em;
+			color: $primary;
+			font-weight: 400;
+		}
+	}
+	
+}
+
+

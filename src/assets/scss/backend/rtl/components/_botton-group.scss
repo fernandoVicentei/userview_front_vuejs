@@ -1,0 +1,30 @@
+
+.btn-group {
+  // Prevent double borders when buttons are next to each other
+  > .btn:not(:first-child),
+  > .btn-group:not(:first-child) {
+    margin-left: -$btn-border-width;
+  }
+
+  // Reset rounded corners
+  > .btn:not(:last-child):not(.dropdown-toggle),
+  > .btn-group:not(:last-child) > .btn {
+    @include border-right-radius(8px);
+  }
+
+  > .btn:not(:first-child),
+  > .btn-group:not(:first-child) > .btn {
+    @include border-left-radius(8px);
+  }
+  
+  // Reset rounded corners
+  > .btn:not(:first-child):not(.dropdown-toggle),
+  > .btn-group:not(:first-child) > .btn {
+    @include border-right-radius(0px);
+  }
+
+  > .btn:not(:last-child),
+  > .btn-group:not(:last-child) > .btn {
+    @include border-left-radius(0px);
+  }
+}

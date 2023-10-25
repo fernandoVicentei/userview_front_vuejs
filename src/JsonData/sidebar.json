@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Perfil",
+        "title": "Perfil",
+        "short_title": "Perfil",
+        "href": "",
+        "link": {
+            "name": ""
+        },
+        "class_name": "",
+        "icon_class": "las la-user"
+    },
+    {
+        "name": "editar",
+        "title": "Editar",
+        "short_title": "Editar",
+        "href": "",
+        "link": {
+            "name": ""
+        },
+        "class_name": "",
+        "icon_class": "las la-pen"
+    },
+    {
+        "name": "metricas",
+        "title": "Métricas",
+        "short_title": "Home",
+        "href": "backend/dashboard-1",
+        "link": {
+            "name": "layout.dashboard1"
+        },
+        "class_name": "",
+        "icon_class": "las la-chart-pie iq-arrow-left"
+    }
+]

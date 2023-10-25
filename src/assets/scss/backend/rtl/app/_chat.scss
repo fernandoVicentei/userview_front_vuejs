@@ -1,0 +1,93 @@
+
+#chat-search {
+	padding-right: 40px;
+	padding-left: 0px;
+}
+.form-group.chat-search-data {
+	>i {
+		
+		right: 15px;
+		
+		left: auto;
+	}
+}
+.nav
+{
+	padding-right: 0px;
+}
+span.avatar-status {
+	
+	right: auto;
+	left: -3px;
+}
+
+
+.chat-content {
+	
+	.chat-left {
+		.chat-message {
+			text-align: right;
+			
+		
+		}
+	}
+	
+}
+.iq-chat-ui {
+.chat-sidebar-name {
+     text-align: right;
+}
+}	
+@media(max-width: 991px){
+	.chat-data-left {
+	
+	right: -15px;
+	left: auto;
+	
+	
+	@include transform-mixin(translateX(100%));
+
+	@if $enable-transitions == true {
+		@include transition-mixin(all 0.3s ease-in-out);
+	}
+	
+	
+}
+.chat-sidebar-channel {
+	
+	padding-right: 0 !important;
+}
+.chat-search {
+	padding-right: 0 !important;
+}
+.chat-data-left.show {
+	@include transform-mixin(translateX(0));
+	
+	@if $enable-transitions == true {
+		@include transition-mixin(all 0.3s ease-in-out);
+	}
+}
+button.close-btn-res {
+	
+	right: auto;
+	left: 0;
+}
+.chat-head {
+	header {
+		padding-right: 15px;
+	}
+}
+
+#user-detail-popup {
+
+    transform: translateX(90%);
+}
+
+.sidebar-toggle {
+
+	margin-right: 0px;
+    margin-left: 15px;
+}
+
+}
+

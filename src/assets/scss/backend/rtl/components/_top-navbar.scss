@@ -1,0 +1,327 @@
+.iq-search-bar .search-link {
+	right: 10px;
+	left: auto;
+
+}
+
+.iq-top-navbar {
+	&.rtl-iq-top-navbar {
+
+
+
+		.iq-sub-dropdown {
+			right: auto;
+			left: 0;
+		}
+
+		.iq-user-dropdown {
+			left: 0;
+			right: auto;
+			transform: translateX(-100%);
+		}
+
+		.show-data .iq-user-dropdown {
+
+			transform: translateX(0%);
+		}
+	}
+}
+
+.navbar-list {
+
+	float: left;
+
+	li {
+		float: right;
+		list-style-type: none;
+		position: relative;
+
+		>.dropdown {
+			.dropdown-menu {
+				-webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+				animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+				@include transform-mixin(translateY(100%));
+			}
+
+			line-height: 73px;
+			cursor: pointer;
+		}
+
+		.dropdown-toggle {
+			&::after {
+				display: none;
+			}
+		}
+
+		>a.language-title {
+			font-size: 16px;
+		}
+
+
+		.caption {
+			line-height: 16px;
+
+			p {
+				color: $body-text;
+				font-size: 12px;
+			}
+		}
+
+		.iq-sub-dropdown {
+			.iq-sub-card {
+				&:last-child {
+					padding-bottom: 0;
+				}
+
+				font-size: inherit;
+				padding-bottom: 18px;
+				line-height: normal;
+				color: inherit;
+				display: inline-block;
+				width: 100%;
+			}
+
+			.iq-sub-card.iq-sub-card-big {
+				width: auto;
+			}
+		}
+	}
+
+	li.iq-nav-user {
+		display: flex;
+		align-items: flex-start;
+
+		span {
+			flex: 1;
+			font-size: 14px;
+		}
+	}
+
+}
+
+.iq-top-navbar {
+
+
+	right: auto;
+	left: 0;
+
+	@if $enable-transitions==true {
+		@include transition-mixin(all 0.3s ease-in-out);
+	}
+
+	@if $enable-shadows==true {
+		@include shadow-mixin($box-shadow);
+	}
+
+	.iq-navbar-custom {
+		.navbar-breadcrumb {
+			display: block;
+			margin-right: 0px;
+			padding: 20px 0;
+		}
+	}
+
+	.breadcrumb {
+		.breadcrumb-item.active {
+			color: $body-text;
+		}
+
+		background: transparent;
+		padding: 0;
+		margin: 0;
+
+		li {
+			list-style-type: none;
+			font-size: 14px;
+
+			a {
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.iq-sub-dropdown {
+	
+		
+		left: 0;
+		right: auto;
+		border: none;
+		-webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+		animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+	
+
+		@if $enable-transitions==true {
+			@include transition-mixin(all 0.3s ease-in-out);
+		}
+
+		padding: 0;
+
+		@if $enable-rounded==true {
+			@include radius-mixin($border-radius);
+		}
+
+		@if $enable-shadows==true {
+			@include shadow-mixin($box-shadow);
+		}
+
+		@if $enable-transitions==true {
+			@include transition-mixin(all 0.3s ease-in-out);
+		}
+
+		.iq-card-body {
+			div {
+				@if $enable-rounded==true {
+					@include radius-mixin($border-radius-top);
+				}
+			}
+		}
+	}
+
+	.lang {
+		.iq-sub-dropdown {
+			width: auto;
+		}
+	}
+
+	.iq-user-dropdown {
+
+		right: auto;
+		left: 0;
+
+		@include opacity-mixin(0);
+
+		@include transform-mixin(translateX(-100%));
+
+		@if $enable-transitions==true {
+			@include transition-mixin(all 0.3s ease-in-out);
+		}
+	}
+
+	.show-data {
+		.iq-user-dropdown {
+			@include opacity-mixin(1);
+
+			@include transform-mixin(translateX(0));
+
+			@if $enable-transitions==true {
+				@include transition-mixin(all 0.3s ease-in-out);
+			}
+		}
+	}
+
+
+
+
+
+
+	.navbar-brand {
+		padding: 0;
+	}
+}
+
+
+.breadcrumb.rtl-home {
+	.breadcrumb-item {
+		a {
+			i {
+
+				float: right !important;
+			}
+		}
+	}
+}
+
+.card-body {
+	.rtl-right {
+
+		text-align: right !important;
+	}
+}
+
+.cover-container {
+	.media-body.profile-detail {
+		text-align: right;
+	}
+}
+
+.iq-search-bar {
+	.searchbox {
+	
+		position: relative;
+	}
+	.search-input {
+		
+		padding: 5px 40px 5px 65px;
+		
+	}
+	
+}
+
+@media(min-width:992px) {
+
+
+	.navbar-list {
+		li {
+			&:last-child {
+				>a {
+					padding: 0 15px 0 0;
+				}
+			}
+		}
+	}
+
+}
+
+@media (max-width: 991px) {
+	.iq-top-navbar {
+		&.rtl-iq-top-navbar {
+
+			.navbar-list li {
+				float: right;
+			}
+
+			.navbar-nav.navbar-list {
+				float: left;
+			}
+		}
+	}
+}
+
+@media (max-width: 1299px) {
+
+
+	.iq-top-navbar {
+		&.rtl-iq-top-navbar {
+
+			.custom-control-inline {
+				margin-left: 1rem;
+			}
+
+			width: 100%;
+			left: 260px;
+			right: 0px;
+
+			.wrapper-menu {
+				margin: 0 0 0 15px;
+			}
+
+
+		}
+	}
+
+	body.sidebar-main {
+		.iq-top-navbar {
+			&.rtl-iq-top-navbar {
+				width: 100%;
+				right: 0px;
+			}
+		}
+	}
+
+}

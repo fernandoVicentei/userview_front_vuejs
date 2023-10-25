@@ -1,0 +1,118 @@
+.iq-top-navbar {
+    &.rtl-iq-top-navbars {
+        .iq-user-dropdown.rtl-iq-user-dropdown {
+
+            left: 0;
+            right: auto;
+            transform: translateX(-100%);
+
+
+        }
+
+        .show-data .iq-user-dropdown.rtl-iq-user-dropdown {
+
+            transform: translateX(0%);
+        }
+
+        .iq-sub-dropdown {
+            right: auto;
+            left: 0;
+        }
+
+     
+
+        .navbar-list li {
+            float: right;
+        }
+    }
+}
+.dahboard-2 {
+.iq-footer {
+    &.rtl-footer {
+        .list-inline {
+            &.rtl-center {
+                text-align: right;
+            }
+        }
+    }
+
+}
+}
+
+.bg-analytic-horizontal {
+    &.rtl-bg-analytic-horizontal {
+        .iq-sidebar-menu {
+            .iq-menu {
+                li a .iq-arrow-right {
+                    margin-right: auto;
+                    margin-left: 0;
+                }
+
+                li a i {
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}
+
+.content-page {
+    &.c-payment-block {
+        &.rtl-pages {
+
+
+            .perfomer-lists {
+                text-align: right;
+            }
+
+            .apexcharts-legend-marker {
+                margin-left: 3px;
+                margin-right: auto;
+            }
+
+
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .iq-top-navbar {
+        &.rtl-iq-top-navbars {
+            .navbar-nav.navbar-list {
+                float: left;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1300px) {
+    .bg-analytic-horizontal {
+        &.rtl-bg-analytic-horizontal {
+            .white-bg-menu {
+                .iq-menu-horizontal {
+                    .iq-sidebar-menu {
+                        .iq-menu>li {
+                            margin-left: 55px;
+                            margin-right: 0px;
+
+                            >a::before {
+                                left: -40px;
+                                right: auto;
+                            }
+                        }
+
+                        .iq-menu li a i {
+                            margin-left: 8px;
+                        }
+
+                        li .iq-arrow-right.arrow-active {
+                            margin-right: 8px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,316 @@
+.iq-timeline {
+	margin: 0 20px 0 0;
+	padding: 0;
+	width: 100%;
+
+	li {
+		margin-right: 35px;
+		
+
+		.timeline-dots {
+
+			right: -54px;
+	
+
+		}
+	}
+}
+
+.iq-timeline {
+	&:before {
+
+		right: 50%;
+		left: auto;
+		@include transform-mixin(translateX(50%));
+
+
+	}
+}
+
+.timeline-page {
+	.iq-timeline {
+		ul {
+			li {
+				
+
+				&:nth-child(odd) {
+					float: right;
+					text-align: left;
+					clear: both;
+
+					.timeline-dots {
+						left: -8px;
+						right: auto;
+					}
+
+					.time {
+						padding-right: 10px;
+						left: -145px;
+						
+						right: auto;
+					}
+				}
+
+				&:nth-child(even) {
+					float: left;
+					text-align: right;
+					clear: both;
+
+					.timeline-dots {
+						right: -8px;
+						left: auto;
+					}
+
+					.time {
+						text-align: left;
+						padding-left: 10px;
+						right: -145px;
+						
+					}
+				}
+
+				.time {
+					position: absolute;
+					top: 15px;
+					background-color: $primary;
+					color: $white;
+					text-align: right;
+					width: 120px;
+					height: 28px;
+					line-height: 28px;
+					border-radius: 20px;
+				}
+			}
+		}
+
+	}
+
+	.iq-timeline0 {
+		ul {
+			li {
+				width: 50%;
+				padding: 5px 30px 40px 30px;
+				cursor: pointer;
+				margin: 0px;
+
+				&:nth-child(odd) {
+					float: right;
+					text-align: right;
+					width: 100%;
+					padding: 0 60px 0 0;
+					margin-bottom: 20px;
+
+					.timeline-dots {
+						right: 12px;
+						left: auto;
+					}
+
+					.timeline-dots.timeline-dot1 {
+						right: 12px;
+						left: auto;
+					}
+				}
+
+				&:nth-child(even) {
+					float: right;
+					text-align: right;
+					width: 100%;
+					padding: 0 60px 0 0;
+					margin-bottom: 20px;
+
+					.timeline-dots {
+						right: 12px;
+						left: auto;
+					}
+
+					.timeline-dots.timeline-dot1 {
+						right: 12px;
+						left: auto;
+					}
+				}
+			}
+		}
+
+		li {
+
+			.timeline-dots1 {
+
+				right: 0;
+				left: auto;
+
+			}
+
+		}
+	}
+
+	.iq-timeline1 {
+		ul {
+			li {
+				&:nth-child(odd) {
+					float: right;
+					text-align: left;
+					clear: both;
+					margin-right: -19px;
+
+					.timeline-dots {
+						left: -28px;
+						right: auto;
+					}
+				}
+
+				&:nth-child(even) {
+					float: left;
+					text-align: right;
+					clear: both;
+					margin-left: -20px;
+
+					.timeline-dots {
+						right: -27px;
+						left: auto;
+					}
+				}
+
+			
+			}
+		}
+	}
+
+	.iq-timeline2 {
+		ul {
+			li {
+				&:nth-child(odd) {
+					float: right;
+					text-align: right;
+					width: 100%;
+					padding: 0 60px 0 0;
+					margin-bottom: 20px;
+				}
+
+				&:nth-child(even) {
+					float: right;
+					text-align: right;
+					width: 100%;
+					padding: 0 60px 0 0;
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		&:before {
+
+			right: 30px;
+
+			transform: translateX(50%);
+			width: 2px;
+			height: 100%;
+			
+		}
+
+		.content-date {
+
+			right: 0;
+			left: auto;
+
+			padding-top: 8px;
+
+			margin-right: 0px;
+			margin-left: auto;
+
+
+		}
+	}
+}
+
+.iq-timeline0 {
+	li {
+		margin-right: 35px;
+		position: relative;
+		padding: 15px 5px 0 15px;
+		list-style-type: none;
+
+		.timeline-dots {
+
+			right: -54px;
+
+		}
+	}
+
+	&:before {
+
+		right: 20px;
+		left: auto;
+		@include transform-mixin(translateX(50%));
+
+	}
+}
+
+.iq-timeline1 {
+	li {
+		margin-right: 35px;
+	
+		padding: 15px 5px 0 15px;
+	
+
+		.timeline-dots {
+
+			right: -54px;
+
+
+		}
+	}
+
+	&:before {
+
+		right: 50%;
+		left: auto;
+		@include transform-mixin(translateX(50%));
+
+	}
+}
+
+.iq-timeline2 {
+	li {
+		margin-right: 0px;
+		position: relative;
+		padding: 15px 5px 0 15px;
+		list-style-type: none;
+	}
+}
+
+h6.float-left {
+	float: right !important;
+
+}
+
+small.float-right {
+	float: left !important;
+}
+
+@media (max-width:575px) {
+	.timeline-page {
+		.iq-timeline {
+			ul {
+				li {
+					padding-right: 10px;
+					padding-left: 10px;
+
+					.time {
+						width: 90px;
+					}
+
+					&:nth-child(odd) {
+						.time {
+							left: -115px;
+						}
+					}
+
+					&:nth-child(even) {
+						.time {
+							right: -115px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

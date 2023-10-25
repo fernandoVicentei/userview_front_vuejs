@@ -1,0 +1,61 @@
+.profile-icon.iq-icon-box {
+	height: 58px;
+	width: 58px;
+	line-height: 58px;
+	text-align: center;
+	margin-left: 10px;
+	font-size: 26px;
+	text-decoration: none;
+}
+
+.profile-overly {
+	position: absolute;
+	right: auto;
+	bottom: 0;
+	left: 0;
+	padding: 10px 30px;
+	text-align: center;
+	border-radius: 10px 10px 0 0;
+}
+
+ul.iq-contact-rest {
+	li {
+		a {
+			p {
+				word-break: break-all;
+			}
+		}
+	}
+}
+
+.crm-p-image {
+	
+	right: 69px;
+	left: auto;
+	
+}
+
+
+
+.list-inline {
+	&.p-0.mb-0 {
+		&.rtl-rights {
+
+			text-align: right;
+
+		}
+	}
+}
+
+.percentage.float-right {
+	float: left !important;
+}
+
+
+@media(max-width:479px) {
+	.profile-overly {
+		h3 {
+			font-size: 14px;
+		}
+	}
+}

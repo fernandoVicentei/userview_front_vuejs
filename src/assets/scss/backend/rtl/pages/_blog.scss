@@ -1,0 +1,35 @@
+
+.blog-half {
+	.blog-meta {
+		margin-left: 20px;
+		margin-right: auto;
+	}
+}
+.blog-left {
+	.blog-description {
+        right: 0;
+		left: auto;
+	}
+}
+.blog-date {
+	.blog-meta-date {
+		right: 15px;
+		left: auto;
+	}
+}
+.blog-comments {
+	.blog-meta-date {
+		left: 15px;
+		right: auto;
+	}
+}
+
+
+
+
+@media(max-width:480px) {
+	.blog-half {
+		float: right;
+	}
+	
+}

@@ -1,0 +1,49 @@
+
+// .btn-group>.btn:not(:last-child):not(.dropdown-toggle),
+// .btn-group>.btn-group:not(:last-child)>.btn
+// {
+//     @if $enable-rounded == true {
+//                 @include radius-mixin($border-radius-right);
+//             }
+// }
+
+// .btn-group {
+// 	>.btn {
+// 		&:not(:first-child) {
+// 			&:not(.dropdown-toggle) {
+// 				@if $enable-rounded == true {
+//                     @include radius-mixin($border-radius-left);
+//                 }
+// 			}
+// 		}
+// 	}
+// 	>.btn-group {
+// 		&:not(:first-child) {
+// 			>.btn {
+// 				@if $enable-rounded == true {
+//                     @include radius-mixin($border-radius-left);
+//                 }
+// 			}
+// 		}
+// 	}
+// }
+
+// .btn-group {
+// 	>.btn {
+// 		&:not(:last-child) {
+// 			&:not(.dropdown-toggle) {
+// 				border-radius: 0 0 0 0;
+// 			}
+// 		}
+// 	}
+// }
+
+// .btn-group {
+// 	>.btn {
+// 		&:not(:first-child) {
+// 			&:not(.dropdown-toggle) {
+// 				border-radius: 0 0 0 0;
+// 			}
+// 		}
+// 	}
+// }

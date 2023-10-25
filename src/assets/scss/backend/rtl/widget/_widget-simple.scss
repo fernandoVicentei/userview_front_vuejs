@@ -1,0 +1,10 @@
+.col-lg-12.mt-3 {
+    text-align: right;
+
+}
+
+.rtl-right-side {
+    &.mb-0.mt-3 {
+        text-align: right;
+    }
+}

@@ -1,0 +1,6 @@
+.input-group>.form-control:not(:first-child)
+{
+    @if $enable-rounded == true {
+        @include radius-mixin($border-radius-left);
+    }
+}

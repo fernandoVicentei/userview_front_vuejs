@@ -1,0 +1,54 @@
+.treegrid-indent {
+	width: 0px;
+	height: 16px;
+	display: inline-block;
+	position: relative;
+}
+
+
+.treegrid-expander {
+	
+	right: -17px;
+	left: auto;
+	
+}
+.table-editable{
+.table-add.float-right
+{
+    float: left !important;
+}
+}
+
+.glyphicon.glyphicon-chevron-down {
+	&:before {
+		position: absolute;
+		content: "\EA4E";
+		font-family: $font-family-remixicon;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+}
+.glyphicon.glyphicon-plus {
+	&:before {
+		position: absolute;
+		content: "\EA13";
+		font-family: $font-family-remixicon;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+}
+.glyphicon.glyphicon-minus {
+	&:before {
+		position: absolute;
+		content: "\F1AF";
+		font-family: $font-family-remixicon;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+}

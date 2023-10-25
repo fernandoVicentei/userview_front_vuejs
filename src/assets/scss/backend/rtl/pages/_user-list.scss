@@ -1,0 +1,20 @@
+.page-item:first-child .page-link
+{
+    margin-right: 0;
+    @if $enable-rounded == true {
+        @include radius-mixin($border-radius-right);
+    }
+}
+.page-item:last-child .page-link
+{
+    @if $enable-rounded == true {
+        @include radius-mixin($border-radius-left);
+    }
+}
+
+span.rtl-float  {
+    float: right;
+}
+
+
+

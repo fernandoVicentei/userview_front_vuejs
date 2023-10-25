@@ -1,0 +1,145 @@
+
+.clear { clear: both; }
+@media (min-width: 1300px){
+	.iq-menu-horizontal{
+		.iq-sidebar-menu{
+			li{
+				.iq-submenu.iq-submenu-data{
+					position: static;
+				}
+			}
+		}
+	}
+    .iq-menu-horizontal {
+		.iq-sidebar-menu {
+			
+			.iq-menu {
+				li {
+					
+				
+					li {
+						.iq-arrow-right {
+							@include transform-mixin( rotate(0deg));
+						}
+					}
+					ul {
+						
+					
+					
+						@if $enable-transitions == true {
+							@include transition-mixin(all 0.3s ease-in-out);
+						}
+						display: none;
+						animation: fade-in-bottom .6s cubic-bezier(.39,.575,.565,1) both;
+						@include transform-mixin( translateY(100%));
+						@if $enable-rounded == true {
+							@include radius-mixin($border-radius);
+						}
+						@if $enable-shadows == true {
+							@include shadow-mixin($box-shadow);
+						}
+					}
+				}
+			
+				
+				li.menu-open {
+					.iq-arrow-right {
+						@include transform-mixin( rotate(90deg));
+					}
+				}
+			}
+			li {
+				&:hover {
+					>.iq-submenu {
+						display: block;
+						@if $enable-transitions == true {
+							@include transition-mixin(all 0.3s ease-in-out);
+						}
+					}
+					>.iq-submenu.iq-submenu-data {
+						@include opacity-mixin(1);
+						@if $enable-transitions == true {
+							@include transition-mixin(all 0.3s ease-in-out);
+						}
+					}
+				}
+				>.iq-submenu.iq-submenu-data {
+					@include opacity-mixin(0);
+					visibility: visible;
+					right: 100%;
+					top: 0;
+					transform-origin: right center 0;
+				}
+				>.iq-submenu {
+					.iq-arrow-right {
+						margin-left: 0px;
+					}
+				}
+			}
+		}
+		
+	}
+.iq-menu-horizontal {
+	.iq-sidebar-menu {
+		.iq-menu {
+			li {
+				&:hover {
+					.iq-arrow-right {
+						@include transform-mixin( rotate(90deg));
+					}
+					li {
+						.iq-arrow-right {
+							@include transform-mixin( rotate(0deg));
+						}
+					}
+				}
+			}
+		}
+	}
+}
+}
+@media (max-width: 1299px){
+    .iq-menu-horizontal {
+		
+	
+		.iq-sidebar-menu {
+			.iq-menu {
+				li {
+					a {
+						padding: 15px 30px 15px 20px;
+						&:hover {
+							color: $primary;
+						}
+						
+					}
+					ul {
+						position: static;
+						box-shadow: none;
+					}
+					
+				}
+				
+			}
+		}
+    }
+    .iq-menu-horizontal {
+	ul.iq-menu {
+		li {
+			a[aria-expanded=true] {
+				.iq-arrow-right {
+					@include transform-mixin( rotate(90deg));
+				}
+			}
+		}
+	}
+}
+.sidebar-main {
+	.iq-menu-horizontal {
+		@include opacity-mixin(1);
+		width: 260px;
+		@if $enable-transitions == true {
+			@include transition-mixin(all 0.3s ease-in-out);
+		}
+	}
+}
+}

@@ -1,0 +1,37 @@
+
+.content-page {
+    &.rtl-page {
+        margin-right: 260px;
+        margin-left: 0px;
+        .card.rtl-card {
+            text-align: right;
+        }
+        .card.card-block.rtl-mode
+        {
+            text-align: right;
+        } 
+    }
+}
+
+#layout-1-chart-06
+{
+    direction: ltr;
+}
+@media (min-width: 1300px) {
+    body.sidebar-main {
+        .content-page {
+            &.rtl-page {
+                margin-right: 80px;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 1299px) {
+    .content-page {
+        &.rtl-page {
+            margin-right: 0;
+        }
+    }
+}

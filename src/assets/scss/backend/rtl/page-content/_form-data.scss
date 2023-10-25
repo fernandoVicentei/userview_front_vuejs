@@ -1,0 +1,134 @@
+.input-group>.form-control:not(:first-child) {
+	@if $enable-rounded==true {
+		@include radius-mixin($border-radius-left);
+	}
+}
+
+.input-group>.input-group-prepend>.input-group-text {
+
+	@if $enable-rounded==true {
+		@include radius-mixin($border-radius-right);
+	}
+}
+
+
+.input-group>.input-group-append>.input-group-text {
+	@if $enable-rounded==true {
+		@include radius-mixin($border-radius-left);
+	}
+}
+
+.input-group>.form-control:not(:last-child) {
+	@if $enable-rounded==true {
+		@include radius-mixin($border-radius-right);
+	}
+}
+
+.input-group>.input-group-prepend>.btn {
+	@if $enable-rounded==true {
+		@include radius-mixin($border-radius-right);
+	}
+}
+
+.input-group>.input-group-append>.btn {
+	@if $enable-rounded==true {
+		@include radius-mixin($border-radius-left);
+	}
+}
+
+.input-group>.input-group-prepend:first-child>.btn:not(:first-child) {
+	border-radius: 0px 0 0 0px;
+}
+
+.input-group>.input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
+	border-radius: 0px 0 0 0px;
+}
+
+.input-group>.custom-select:not(:last-child) {
+	@if $enable-rounded==true {
+		@include radius-mixin($border-radius-right);
+	}
+}
+
+.input-group>.input-group-prepend:first-child>.input-group-text:not(:first-child) {
+	border-radius: 0px 0 0 0px;
+}
+
+.input-group>.custom-select:not(:first-child) {
+	@if $enable-rounded==true {
+		@include radius-mixin($border-radius-left);
+	}
+}
+
+.input-group>.custom-file:not(:last-child) .custom-file-label {
+	@if $enable-rounded==true {
+		@include radius-mixin($border-radius-right);
+	}
+}
+
+.input-group>.custom-file:not(:first-child) .custom-file-label {
+	@if $enable-rounded==true {
+		@include radius-mixin($border-radius-left);
+	}
+}
+
+// data table
+
+.dataTables_wrapper {
+	.dataTables_paginate {
+
+
+		padding-top: 0.25em;
+		float: left;
+		text-align: left;
+	}
+}
+
+
+
+
+
+table.dataTable.no-footer {
+	border-bottom: 1px solid $border-color !important;
+}
+
+.dataTables_wrapper {
+	.dataTables_paginate {
+		.paginate_button {
+			box-shadow: none !important;
+			outline: none !important;
+		}
+	}
+
+}
+
+.dataTables_wrapper {
+	.dataTables_info {
+		padding-top: 15px !important;
+		float: right;
+		clear: both;
+	}
+}
+
+.dataTables_wrapper {
+	
+
+	.dataTables_filter input
+	{
+		margin-left: auto;
+        margin-right: 0.5em;
+	}
+    .dataTables_length
+	{
+		float: right;
+	}
+
+	.dataTables_filter
+	{
+		float: left;
+        text-align: left;
+	}
+}
+
+ 
+ 

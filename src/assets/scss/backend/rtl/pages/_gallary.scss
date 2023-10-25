@@ -1,0 +1,211 @@
+
+.hover-effects {
+	
+	
+	&:hover {
+		
+		
+		.effect-3 {
+			margin-right: 0;
+		}
+		
+		.ovrlay-1-a {
+			right: 0;
+			top: 0;
+		}
+		.ovrlay-1-b {
+			right: 0;
+			top: 0;
+		}
+		.ovrlay-2-a {
+			right: 0;
+		}
+		.ovrlay-2-b {
+			right: 0;
+		}
+		.ovrlay-3-a {
+			@include transform-mixin( scale(1));
+		}
+		.ovrlay-3-b {
+			@include transform-mixin( scale(1));
+		}
+	
+		.ovrlay-5 {
+			right: 0;
+		    left: auto;
+			
+		}
+        .ovrlay-8 {
+			left: 0;
+			right: auto;
+		}
+		.effect-8 {
+			left: 40px;
+			right: auto;
+		}
+	}
+}
+
+
+.effect-3 {
+	margin-right: 30px;
+	margin-left: auto;
+	@if $enable-transitions == true {
+		@include transition-mixin(all 0.3s ease-in-out);
+	}
+	@include transform-mixin( scale(1.3));
+}
+
+.ovrlay-1-a {
+	
+	right: -100%;
+	left: auto;
+	
+}
+.ovrlay-1-b {
+
+	right: 100%;
+	left: auto;
+	
+}
+.ovrlay-2-a {
+	
+	right: -100%;
+	left: auto;
+}
+.ovrlay-2-b {
+	
+	right: 100%;
+	left: auto;
+}
+.ovrlay-3-a {
+	
+	right: 0;
+	left: auto;
+	top: 0;
+	
+}
+.ovrlay-3-b {
+	position: absolute;
+	
+	height: 100%;
+	right: 0;
+	top: 0;
+	width: 100%;
+	@include transform-mixin( scale(0));
+	@if $enable-transitions == true {
+		@include transition-mixin(all 0.3s ease-in-out);
+	}
+	
+}
+.ovrlay-4-a {
+	
+	height: 100%;
+	position: absolute;
+	right: 0;
+	width: 100%;
+	@if $enable-transitions == true {
+		@include transition-mixin(all 0.3s ease-in-out);
+	}	
+	top: -100%;
+}
+.ovrlay-4-b {
+
+	height: 100%;
+	position: absolute;
+	right: 0;
+	width: 100%;
+		}
+	
+
+.ovrlay-5 {
+	
+	
+	right: -100%;
+	left: auto;
+	
+
+	
+	
+}
+.ovrlay-6 {
+
+	
+	right: 0;
+	left: auto;
+	
+
+	
+	
+}
+.ovrlay-8 {
+	
+	
+	left: -40%;
+	right: auto;
+	
+	.i-btn {
+		
+		left: 10%;
+		right: auto;
+		
+	
+		@include transform-mixin( translateX(50%));
+		
+	}
+}
+.ovrlay-7 {
+	
+	right: 0;
+	left: auto	;
+	
+	
+	.button {
+		
+		right: 50%;
+		left: auto;
+		
+		
+	}
+}
+.effect-8 {
+
+	left: 0;
+	right: auto;
+		
+}
+.data-table {
+	.table {
+		th {
+			border-bottom-width: 1px;
+			border-top: none;
+		}
+	}
+}
+
+
+
+@media (max-width: 991px){
+	.masonry {
+		.item {
+			width: 33.33%;
+		}
+		.grid-sizer {
+			width: 33.33%;
+		}
+	}
+
+}
+@media(max-width:767px){
+	.masonry {
+		.item {
+			width: 100%;
+			padding: 0 0 18px 0;
+		}
+		.grid-sizer {
+			width: 100%;
+			padding: 0 0 18px 0;
+		}
+	}
+
+}

@@ -1,0 +1,210 @@
+.iq-email-list {
+	text-align: right;
+
+	.iq-email-ui {
+
+		li {
+
+			.badge {
+				float: left;
+
+			}
+		}
+
+	}
+
+	.iq-email-ui.iq-email-label {
+		li {
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.iq-email-to-list {
+	ul {
+
+		li {
+
+			margin: 0 0 0 5px;
+			float: right;
+
+
+
+			.custom-control-label {
+				&::before {
+					top: 13px;
+					right: -20px;
+
+				}
+			}
+		}
+
+	}
+
+
+}
+
+
+.iq-inbox-subject.p-3 {
+	text-align: right;
+}
+
+.iq-email-search {
+
+
+	.search-link {
+
+		left: 15px;
+		right: auto;
+
+
+	}
+}
+
+.iq-email-listbox {
+	.iq-email-sender-list {
+
+		>li {
+
+			text-align: right;
+
+		}
+
+		li {
+
+			&:hover {
+				.iq-social-media {
+					left: 0;
+					right: auto;
+				}
+			}
+		}
+
+	}
+}
+
+.iq-email-sender-info {
+	.iq-checkbox-mail {
+
+		float: right;
+
+	}
+
+	.iq-star-toggle {
+
+		float: right;
+
+		margin-right: 10px;
+
+		margin-left: auto;
+	}
+
+	.iq-email-title {
+
+		right: 85px;
+		left: 0;
+
+	}
+}
+
+.iq-email-content {
+
+	right: 300px;
+	left: 0;
+
+	.iq-email-date {
+
+		left: 20px;
+		text-align: left;
+		padding-right: 10px;
+		right: auto;
+		padding-left: 0px;
+	}
+
+	.iq-email-subject {
+
+		right: 0;
+		left: 110px;
+
+	}
+}
+
+.iq-email-sender-list {
+	.iq-social-media {
+
+		left: -220px;
+		right: auto;
+
+	}
+}
+
+
+.iq-subject-status {
+	margin-right: 15px;
+	margin-left: auto;
+}
+
+
+
+.email-app-details {
+
+	right: auto;
+	left: 0;
+
+}
+
+// .attegement {
+// 	ul {
+// 		padding: 0;
+// 		list-style: none;
+// 	}
+// }
+
+#compose-email-popup {
+
+	right: auto;
+	left: 0;
+
+
+}
+
+.iq-social-media {
+	li {
+
+		float: right;
+		margin-left: 10px;
+		margin-right: 0px;
+
+	}
+}
+
+
+@media(max-width: 1199px) {
+	.iq-email-to-list {
+
+		ul {
+			li {
+				margin: 0 5px 0 5px;
+			}
+		}
+
+		.justify-content-between {
+			float: right;
+
+		}
+	}
+
+}
+
+@media (max-width: 479px) {
+	.send-buttons {
+
+		.send-btn {
+			padding-right: 5px !important;
+			margin-bottom: 15px;
+		}
+	}
+}
