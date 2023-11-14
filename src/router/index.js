@@ -138,7 +138,8 @@ const PrivacySettings = () =>import('@/views/backend/App/Extraap/PrivacySettings
 const TermsOfUse = () =>import('@/views/backend/App/Extraap/TermsOfUse') */
 
 //Views
-const Metricas = () =>import('@/views/metricas')
+const Metricas = () =>import('@/views/frontend/metricas')
+const Editar = () =>import('@/views/frontend/editar')
 
 
 Vue.use(VueRouter)
@@ -154,10 +155,16 @@ const childRoute = () => [
     component: Dashbord1
   },
   {
-    path: '',
-    name: 'chart1',
-    meta: { name: 'chart1' },
+    path: '/MisDatos',
+    name: 'misdatos',
+    meta: { name: 'misdatos' },
     component: Metricas
+  },
+  {
+    path: '/Editar',
+    name: 'editar',
+    meta: { name: 'editar' },
+    component: Editar
   },
 
 
@@ -320,22 +327,28 @@ const routes = [
     component: Error404,
   },
   {
-    path: '/Metricas',
-    name: 'metricas',
+    path: '/MisDatos',
+    name: 'misdatos',
     component: Layout1,
     children: childRoute(),
     meta: {
       requiresAuth: true,
     },
   },
-
-
+  {
+    path: '/Editar',
+    name: 'editar',
+    component: Layout1,     
+    children: childRoute(),
+    meta: {
+      requiresAuth: true,
+    },
+  },
   {
     path: '/Dashboard',
     name: 'Dashboard',
     component: Layout1,
     children: childRoute(),
-
   },
   {
     path: '',

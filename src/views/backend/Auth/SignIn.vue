@@ -34,7 +34,7 @@
                            <div class="col-lg-6">
                               <div class="custom-control custom-checkbox mb-3">
                                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                 <label class="custom-control-label" for="customCheck1">Remember Me</label>
+                                 <label class="custom-control-label" for="customCheck1">Recordarme</label>
                               </div>
                            </div>
                            <div class="col-lg-6">
@@ -134,7 +134,7 @@ export default {
                      bodyClass: 'bg-white text-dark',
                   })
                   this.$store.commit('auth/setToken', token);
-                  this.$router.push({ name: 'metricas', meta: { requiresAuth: true } });
+                  this.$router.push({ name: 'misdatos', meta: { requiresAuth: true } });
                   /* this.$router.push({ name: 'Dashboard' }); */
 
 

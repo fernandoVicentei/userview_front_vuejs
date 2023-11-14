@@ -3,9 +3,9 @@
         "name": "Perfil",
         "title": "Perfil",
         "short_title": "Perfil",
-        "href": "",
+        "href": "/MisDatos",
         "link": {
-            "name": ""
+            "name": "misdatos"
         },
         "class_name": "",
         "icon_class": "las la-user"
@@ -14,22 +14,11 @@
         "name": "editar",
         "title": "Editar",
         "short_title": "Editar",
-        "href": "",
+        "href": "/Editar",
         "link": {
-            "name": ""
+            "name": "editar"
         },
         "class_name": "",
         "icon_class": "las la-pen"
-    },
-    {
-        "name": "metricas",
-        "title": "Métricas",
-        "short_title": "Home",
-        "href": "backend/dashboard-1",
-        "link": {
-            "name": "layout.dashboard1"
-        },
-        "class_name": "",
-        "icon_class": "las la-chart-pie iq-arrow-left"
     }
 ]
