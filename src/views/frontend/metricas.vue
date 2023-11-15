@@ -1,8 +1,8 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12 mb-3">
-                <div class="d-flex align-items-center justify-content-between welcome-content">
+            <div class="col-lg-12 mb-3 text-center">
+                <div class="d-flex align-items-center justify-content-between welcome-content text-center">
                     <div class="navbar-breadcrumb text-center">
                         <h4 class="mb-0 text-center">Mis Datos</h4>
                     </div>                   
