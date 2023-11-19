@@ -138,9 +138,11 @@ const PrivacySettings = () =>import('@/views/backend/App/Extraap/PrivacySettings
 const TermsOfUse = () =>import('@/views/backend/App/Extraap/TermsOfUse') */
 
 //Views
-const Metricas = () =>import('@/views/frontend/metricas')
-const Editar = () =>import('@/views/frontend/editar')
+const Metricas = () => import('@/views/frontend/metricas')
+const Editar = () => import('@/views/frontend/editar')
 
+//Pages
+const ProfileCard = () => import('@/views/frontend/page/profileCard')
 
 Vue.use(VueRouter)
 
@@ -166,7 +168,7 @@ const childRoute = () => [
     meta: { name: 'editar' },
     component: Editar
   },
-
+  
 
 ]
 const authchildRoute = () => [
@@ -338,7 +340,7 @@ const routes = [
   {
     path: '/Editar',
     name: 'editar',
-    component: Layout1,     
+    component: Layout1,
     children: childRoute(),
     meta: {
       requiresAuth: true,
@@ -393,7 +395,13 @@ const routes = [
     name: 'extra-pages',
     component: Layout1,
     children: extrapageschildRoute()
-  }
+  },
+  {
+    path: '/profileCard',
+    name: 'profileCard',
+    meta: { name: 'profileCard' },
+    component: ProfileCard
+  },
 
 ]
 
