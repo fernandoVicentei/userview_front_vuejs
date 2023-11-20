@@ -17,10 +17,14 @@
       <!-- <div class="card  rounded">
                 <div class="card-body"> -->
       <div class="sidebarbottom-content"><br>
-        <div class="image"><img src="@/assets/images/layouts/side-bkg.png" class="img-fluid" alt="side-bkg"></div>
+        <div class="image">
+          <!-- <img src="@/assets/images/layouts/side-bkg.png" class="img-fluid" alt="side-bkg"> -->
+        </div>
         <!--  <h5 class="mb-3 text-white mt-3">Did you Know ?</h5>
                         <p class="mb-0 text-white">You can add additional user in your Account's Settings</p> -->
-        <button type="button" class="btn bg-danger  mt-3" @click="logout"><i class="fas fa-power-off"></i> Cerrar Sesión</button>
+        <button type="button" class="btn bg-danger  mt-3" @click="logout">
+          <i class="fas fa-power-off"></i>
+           Cerrar Sesión</button>
       </div>
       <!--    </div>
             </div>

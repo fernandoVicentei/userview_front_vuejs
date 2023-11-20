@@ -228,6 +228,7 @@ const pageschildRoute = () => [
     component: CommingSoon
   }
 ]
+
 const extrapageschildRoute = () => [
   {
     path: 'contact-detail',
