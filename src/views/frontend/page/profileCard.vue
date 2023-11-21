@@ -13,8 +13,8 @@
             </div>
             <div class="col-lg-12 col-md-6 d-flex justify-content-center">
                 <div class="text-center ">
-                    <h3 class="my-2">Fernandin Mi gatita</h3>
-                    <h4 class="my-2">Inge Gatita</h4>
+                    <h3 class="my-2">{{profile.nombres}}</h3>
+                    <h4 class="my-2">{{profile.cargo}}</h4>
                     <button class="btn btn-secondary my-3">Guardar Contacto</button>
                 </div>
             </div>
@@ -64,14 +64,13 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
-    data() {
-        return {
-            name: "Tu nombre",
-            email: "tu@correo.com",
-            birthdate: "1980-01-01",
-            interests: ["Viajar", "Leer", "Programar"],
-        };
+    computed: mapState({
+        profile: state => state.profile.p
+    }),
+    created() {
+        this.$store.dispatch('profile/getProfile', { userId: 1 })
     },
 }
 </script>
