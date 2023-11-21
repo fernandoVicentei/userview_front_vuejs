@@ -25,7 +25,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Telefono</label>
-                                            <input type="number"  v-model="telefono"  max="10000000" class="form-control" id="" placeholder="Ingrese un numero valido">
+                                            <input type="number"  v-model="telefono"   class="form-control" id="" placeholder="Ingrese un numero valido">
                                             <small id="" v-if="errorTelefono"  class="  text-danger">Debe de llenar este campo para actualizar </small>
                                         </div>                    
                                         <PulseLoader :loading="loading" color="white" :size="size" v-if="isLoading" />                     
@@ -75,16 +75,15 @@
 </template>
 <script>
 
-import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
-import { urlLocal } from '../../config/rutas';
-import  BToast  from 'bootstrap-vue';
+
+import RedService from '../../config/servicios';
+import { BToast } from 'bootstrap-vue';
 
 export default {
     name: 'Dashbord1',
     props:[''],
-    components: {    
-      PulseLoader,
-      BToast,
+    components: {     
+        'b-toast': BToast,
    },
     data() {
         return {           
@@ -93,16 +92,17 @@ export default {
             errorNombre:false,
             errorTelefono:false,
             isLoading: false,
-            idUsuario:0,
             enlace:'',
-            imagen:''
+            imagen:'',
+            idUsuario:1,
         }
     },
     mounted(){
       this.imagen = require('@/img/qr.jpg') 
+      this.obtenerInformacionCliente()
     },
     methods:{
-        enviarFormulario:function(){
+        enviarFormulario(){
             this.errorNombre=false;
             this.errorTelefono = false
             if (this.formularioValido()) {
@@ -116,72 +116,55 @@ export default {
                 } 
             }
         },
-        formularioValido:function(){
-            return this.nombreEnlace.trim() !== '' && this.telefono.trim() !== '';
+        formularioValido(){
+            return this.nombreEnlace.trim() !== '' && this.telefono.toString().trim() !== '';
         },
-        obtenerDatos:function(){
-
-        },
-        enviarPeticion:function()
+        async enviarPeticion()
         {
-            const url = urlLocal + '/';
-            const requestBody = {
-                email: this.nombreEnlace,
-                password: this.telefono,
-                idUsuario : this.idUsuario
-            };
-            const requestOptions = {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(requestBody),
-            };
-            fetch(url, requestOptions)
-            .then(response => response.json())
-            .then(data => {
-                this.isLoading = false;
-                if (data.login == true) {
-                    const token = data.token;
-                    this.saveToken(token);
-                    this.$bvToast.toast(`Accesso correcto`, {
-                        title: 'Bienvenido!',
-                        autoHideDelay: 500,
-                        variant: 'primary',
-                        toastClass: 'my-toast',
-                        toaster: 'b-toaster-bottom-left',
-                        headerClass: 'bg-success text-white',
-                        bodyClass: 'bg-white text-dark',
-                    })
-                    
-                } else {
-                    this.$bvToast.toast(`No se reconocen los credenciales`, {
-                        title: 'ERROR',
-                        autoHideDelay: 500,
-                        variant: 'primary',
-                        toastClass: 'my-toast',
-                        toaster: 'b-toaster-bottom-left',
-                        headerClass: 'bg-danger text-white',
-                        bodyClass: 'bg-white text-dark',
-                    })
-                }
-                // Aquí puedes realizar acciones con la respuesta del servidor
-            })
-            .catch(error => {
-                console.log(error)
-                this.isLoading = false;                 
-                this.$bvToast.toast(`Reintente nuevamente`, {
-                    title: 'ERROR',
-                    autoHideDelay: 500,
-                    variant: 'primary',
-                    toastClass: 'my-toast',
-                    toaster: 'b-toaster-bottom-left',
-                    headerClass: 'bg-danger text-white',
-                    bodyClass: 'bg-white text-dark',
-                })
-            });
-
-
+            try {                
+                let profileData = await RedService.updateDataProfileBasic(this.idUsuario,this.nombreEnlace,this.telefono ) ;              
+                if(profileData.success){
+                    this.nombreEnlace = profileData.content.enlace_tarjeta_cliente;
+                    this.telefono = profileData.content.telefono;
+                    this.verPopUpOok('Datos actualizados correctamente.')
+                }else{
+                    this.verPopUpError('Error al actualizar los datos')
+                }               
+            } catch (error) {              
+                this.verPopUpError('Error fetching social media data:', error);
+            } 
+        },
+        verPopUpOok(mensaje){
+            this.$bvToast.toast( mensaje, {
+                     title: 'Informacion',
+                     autoHideDelay: 500,
+                     variant: 'primary',
+                     toastClass: 'my-toast',
+                     toaster: 'b-toaster-bottom-left',
+                     headerClass: 'bg-success text-white',
+                     bodyClass: 'bg-white text-dark',
+                  })
+        },
+        verPopUpError(mensaje){
+            this.$bvToast.toast(mensaje, {
+                     title: 'ERROR',
+                     autoHideDelay: 500,
+                     variant: 'primary',
+                     toastClass: 'my-toast',
+                     toaster: 'b-toaster-bottom-left',
+                     headerClass: 'bg-danger text-white',
+                     bodyClass: 'bg-white text-dark',
+                  })
+        },
+        async obtenerInformacionCliente(){
+            try {                
+                let profileData = await RedService.getAllDataProfileAdvance(this.idUsuario);              
+                this.nombreEnlace = profileData.datos_personales.enlace_tarjeta_cliente;
+                this.telefono = profileData.datos_personales.telefono;
+                 
+            } catch (error) {              
+                console.error('Error fetching social media data:', error);
+            } 
         }
     }
 }

@@ -4,3 +4,5 @@ export const urlLocal = 'http://localhost:81/yolohago_backend/public/api';
 // Productivo
 export const urlProductivo = 'https://www.example.com';
 
+export const urlLocalImages = 'http://localhost:81/yolohago_backend/public/storage/';
+

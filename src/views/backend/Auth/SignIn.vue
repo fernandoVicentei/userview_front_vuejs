@@ -134,10 +134,7 @@ export default {
                      bodyClass: 'bg-white text-dark',
                   })
                   this.$store.commit('auth/setToken', token);
-                  this.$router.push({ name: 'misdatos', meta: { requiresAuth: true } });
-                  /* this.$router.push({ name: 'Dashboard' }); */
-
-
+                  this.$router.push({ name: 'misdatos', meta: { requiresAuth: true } });   
                } else {
                   this.$bvToast.toast(`No se reconocen los credenciales`, {
                      title: 'ERROR',
@@ -148,7 +145,6 @@ export default {
                      headerClass: 'bg-danger text-white',
                      bodyClass: 'bg-white text-dark',
                   })
-
                }
                // Aquí puedes realizar acciones con la respuesta del servidor
             })
