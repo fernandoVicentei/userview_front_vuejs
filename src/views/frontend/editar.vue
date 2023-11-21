@@ -188,6 +188,7 @@ export default {
             errorDescripcion:false,
             nombre:'',
             descripcion:'',
+            prueba:'',
             cargo:'',
             isLoading:false, 
             icono:'',
