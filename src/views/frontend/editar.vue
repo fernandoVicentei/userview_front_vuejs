@@ -119,7 +119,22 @@ export default {
             cargo: '',
             isLoading: false,
             icono: '',
-            fondo: ''
+            fondo: '',                
+            errorNombre:false,
+            errorCargo:false,
+            errorDescripcion:false,
+            nombre:'',
+            descripcion:'',
+            prueba:'',
+            cargo:'',
+            isLoading:false, 
+            icono:'',
+            fondo:'',
+            verModal:false,
+            tituloModal:'Mi Red Social',
+            enlace:'',
+            errorEnlace:false,
+            verModalEliminar:false,
         }
     },
     mounted() {
