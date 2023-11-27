@@ -102,38 +102,38 @@
         </div>
 
         <div>
-           <!--  <b-button v-b-modal.modal-1>Launch demo modal</b-button> -->
-            <b-modal v-model="verModal" :title="tituloModal" hide-footer >
-                <form  @submit.prevent="enviarFormulario">
+            <!--  <b-button v-b-modal.modal-1>Launch demo modal</b-button> -->
+            <b-modal v-model="verModal" :title="tituloModal" hide-footer>
+                <form @submit.prevent="enviarFormulario">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Red Social</label>
-                        <input type="text" class="form-control" disabled   >                         
+                        <input type="text" class="form-control" disabled>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Enlace de Perfil </label>
-                        <input type="text"  v-model="enlace"   class="form-control"  placeholder="http://mi-red-social-/123">
-                        <small id="" v-if="errorEnlace"  class="  text-danger">Debe de llenar este campo para finalizar el proceso </small>
-                    </div>                             
+                        <input type="text" v-model="enlace" class="form-control" placeholder="http://mi-red-social-/123">
+                        <small id="" v-if="errorEnlace" class="  text-danger">Debe de llenar este campo para finalizar el
+                            proceso </small>
+                    </div>
                     <button type="submit" class="btn btn-success float-left">Guardar</button>
-                    <button  type="button" class="btn btn-secondary float-right" @click="cerrarModal" >Cancelar</button>
-                </form>                 
+                    <button type="button" class="btn btn-secondary float-right" @click="cerrarModal">Cancelar</button>
+                </form>
             </b-modal>
         </div>
 
         <div>
-           <!--  <b-button v-b-modal.modal-1>Launch demo modal</b-button> -->
-            <b-modal v-model="verModalEliminar" title="Informacion" hide-footer >
-                <div class="" > 
+            <!--  <b-button v-b-modal.modal-1>Launch demo modal</b-button> -->
+            <b-modal v-model="verModalEliminar" title="Informacion" hide-footer>
+                <div class="">
                     <strong>¿ Esta seguro de quitar esta red social ? </strong><br><br>
                     <button type="submit" class="btn btn-success float-left">Confirmar</button>
-                    <button  type="button" class="btn btn-secondary float-right" @click="cerrarModalEliminar" >Cancelar</button>    
-                </div>           
+                    <button type="button" class="btn btn-secondary float-right"
+                        @click="cerrarModalEliminar">Cancelar</button>
+                </div>
             </b-modal>
         </div>
 
     </div>
-
-    
 </template>
 <script>
 
@@ -160,36 +160,36 @@ export default {
     },
     methods: {
         handleOpenProfileCard() {
-            this.$router.push('/profileCard');
+            this.$router.push({ name: 'profileCard', params: { id: 1 } });
         },
-        verRedSocial(){            
+        verRedSocial() {
             //this.$refs['modal'].hide()
             //this.$refs['my-modal'].show()
         },
-        verEditarRedSocial(){
+        verEditarRedSocial() {
             this.verModal = true
-            
+
         },
-        eliminarRedSocial(){
+        eliminarRedSocial() {
             this.verModalEliminar = true
         },
-        cerrarModal(){
-            this.verModal= false
-            this.errorEnlace= false
+        cerrarModal() {
+            this.verModal = false
+            this.errorEnlace = false
         },
-        cerrarModalEliminar(){
-            this.verModalEliminar= false
+        cerrarModalEliminar() {
+            this.verModalEliminar = false
         },
-        enviarFormulario(){
+        enviarFormulario() {
             if (this.enlace.trim().length >= 5) {
-                  console.log('hola')
-            }else{                
-                this.errorEnlace=true;                 
+                console.log('hola')
+            } else {
+                this.errorEnlace = true;
             }
         },
-        nuevaRedSocial(){
-            this.tituloModal = 'Nueva Red Social'            
-            this.verModal= true
+        nuevaRedSocial() {
+            this.tituloModal = 'Nueva Red Social'
+            this.verModal = true
         },
 
     }
@@ -197,13 +197,11 @@ export default {
 </script>
 
 <style>
-
-.sombra-card{
+.sombra-card {
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-.sombre-contenedor{
+.sombre-contenedor {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
-
 </style>

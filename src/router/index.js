@@ -398,7 +398,7 @@ const routes = [
     children: extrapageschildRoute()
   },
   {
-    path: '/profileCard',
+    path: '/profileCard/:id',
     name: 'profileCard',
     meta: { name: 'profileCard' },
     component: ProfileCard

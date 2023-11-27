@@ -1,77 +1,99 @@
 <template>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-md-6 d-flex justify-content-center" style="background-color: #a3f0b7;">
-                <img src="https://api.soyyo.digital/media/background/image_background.png"
-                    style="max-width: 100%; width: 40%;" />
+        <div class="row mb-4">
+            <div class="col-lg-12 col-md-12 d-flex justify-content-center"
+                :style="{ backgroundColor: profile.fondo_color ?? '#000000' }">
+                <img v-if="profile.fondo_tarjeta_path" :src="`${domainStorage}/${profile.fondo_tarjeta_path}`"
+                    alt="Foto Fondo Tarjeta" style="max-width: 100%;" />
+                <img v-else :src="`${domain}/img/fondo_default_perfil.jpg`" alt="Foto Fondo Tarjeta"
+                    style="max-width: 100%;" />
             </div>
             <!-- Perfil del Usuario (Avatar) -->
-            <div class="col-lg-12 col-md-6 d-flex justify-content-center">
-                <img src="https://placekitten.com/150/150" class="img-thumbnail rounded-circle" alt="User Avatar"
+            <div class="col-lg-12 col-md-12 d-flex justify-content-center">
+                <img v-if="profile.fondo_perfil_path" :src="`${domainStorage}/${profile.fondo_perfil_path}`"
+                    class="img-thumbnail rounded-circle" alt="User Avatar"
                     style="width: 20vh; height: 20vh; z-index: 1;margin-top: -5rem;">
-                <!-- Puedes agregar un ícono de cámara o editar aquí si lo deseas -->
+                <img v-else :src="`${domain}/img/foto_default_perfil.png`" class="img-thumbnail rounded-circle"
+                    alt="User Avatar Default" style="width: 20vh; height: 20vh; z-index: 1;margin-top: -5rem;">
             </div>
-            <div class="col-lg-12 col-md-6 d-flex justify-content-center">
+            <div class="col-lg-12 col-md-12 d-flex justify-content-center">
                 <div class="text-center ">
-                    <h3 class="my-2">{{profile.nombres}}</h3>
-                    <h4 class="my-2">{{profile.cargo}}</h4>
+                    <h3 class="my-2">{{ profile.nombres }}</h3>
+                    <h4 class="my-2">{{ profile.cargo }}</h4>
+                    <p class="my-2">{{ profile.descripcion }}</p>
                     <button class="btn btn-secondary my-3">Guardar Contacto</button>
                 </div>
             </div>
-            <div class="col-lg-12 col-md-6 d-flex justify-content-center">
-                <div class="card border-primary">
+            <div class="col-lg-12 col-md-12 mb-4 d-flex justify-content-center">
+                <div class="card border-primary ">
                     <div class="card-body">
-                        <h6 class="card-title">Redes Sociales</h6>
+                        <h6 class="card-title text-center">Redes Sociales</h6>
                         <!-- Lista de Redes Sociales -->
                         <ul class="row">
-                            <li class="col-md-6 d-flex flex-row justify-content-center align-items-center">
-                                <img src="https://api.soyyo.digital/media/base_social_media/icon_facebook.png" class="mr-3"
-                                    alt="Facebook Icon" style="width: 50px; height: 50px;">
+                            <li v-for="red_social in profile.redes_sociales" :key="red_social.nombre"
+                                class="col-md-6 d-flex flex-col justify-content-center align-items-center">
+                                <img v-if="red_social.icono.includes('/')" :src="`${domainStorage}/${red_social.icono}`"
+                                    class="m-2" alt="Facebook Icon" style="width: 50px; height: 50px;">
+                                <img v-else :src="`${domain}/img/red_social_default.png`" class="m-2 rounded-circle"
+                                    alt="Facebook Icon" style="width: 45px; height: 45px;">
                                 <div class="media-body">
-                                    <h5 class="mt-0">Facebook</h5>
-                                    <!-- Puedes agregar más detalles sobre la cuenta de Facebook si lo deseas -->
-                                </div>
-                            </li>
-                            <li class="col-md-6 d-flex flex-row justify-content-center align-items-center">
-                                <img src="https://api.soyyo.digital/media/base_social_media/icon_facebook.png" class="mr-3"
-                                    alt="Facebook Icon" style="width: 50px; height: 50px;">
-                                <div class="media-body">
-                                    <h5 class="mt-0">Instagram</h5>
-                                    <!-- Puedes agregar más detalles sobre la cuenta de Facebook si lo deseas -->
-                                </div>
-                            </li>
-                            <li class="col-md-6 d-flex flex-row justify-content-center align-items-center">
-                                <img src="https://api.soyyo.digital/media/base_social_media/icon_facebook.png" class="mr-3"
-                                    alt="Facebook Icon" style="width: 50px; height: 50px;">
-                                <div class="media-body">
-                                    <h5 class="mt-0">Gmail</h5>
-                                    <!-- Puedes agregar más detalles sobre la cuenta de Facebook si lo deseas -->
-                                </div>
-                            </li>
-                            <li class="col-md-6 d-flex flex-row justify-content-center align-items-center">
-                                <img src="https://api.soyyo.digital/media/base_social_media/icon_facebook.png" class="mr-3"
-                                    alt="Facebook Icon" style="width: 50px; height: 50px;">
-                                <div class="media-body">
-                                    <h5 class="mt-0">Whatsap</h5>
-                                    <!-- Puedes agregar más detalles sobre la cuenta de Facebook si lo deseas -->
+                                    <h5 class="mt-0">{{ red_social.nombre }}</h5>
                                 </div>
                             </li>
                         </ul>
+
                     </div>
                 </div>
             </div>
+            <div class="col-lg-12 col-md-12 text-center fixed-bottom" :style="{ backgroundColor: '#000000' }">
+                <h4 style="color: white;" class="yolohago_h3 m-1">Yo lo hago Bolivia</h4>
+                <h6 style="color: white;" class="yolohago_h5">© 2023 Yo lo hago | Derechos reservados</h6>
+            </div>
         </div>
+
     </div>
 </template>
 <script>
 import { mapState } from 'vuex'
+import { domainStorage, domain } from './../../../config/rutas';
 export default {
+    data() {
+        return {
+            domainStorage: domainStorage,
+            domain: domain
+        }
+    },
     computed: mapState({
         profile: state => state.profile.p
     }),
     created() {
-        this.$store.dispatch('profile/getProfile', { userId: 1 })
+        const idUser = this.$route.params.id;
+        this.$store.dispatch('profile/getProfile', { userId: idUser })
     },
+    mounted() {
+        console.log(this.profile)
+    }
 }
 </script>
-<style scoped></style>
+<style scoped>
+@media (max-width: 768px) {
+    .img-fondo-tarjeta {
+        width: 100%;
+
+    }
+
+    .yolohago_h3 {
+        font-size: 18px;
+    }
+
+    .yolohago_h5 {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 769px) {
+    .img-fondo-tarjeta {
+        width: 40%;
+    }
+}
+</style>
