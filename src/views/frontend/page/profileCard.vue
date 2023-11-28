@@ -29,8 +29,8 @@
                     <div class="card-body">
                         <h6 class="card-title text-center">Redes Sociales</h6>
                         <!-- Lista de Redes Sociales -->
-                        <div class="row justify-content-center align-items-center text-center ">
-                            <div v-for="red_social in profile.redes_sociales" :key="red_social.nombre" class="col-md-3">
+                        <div class="row justify-content-center align-items-center  ">
+                            <div v-for="red_social in profile.redes_sociales" :key="red_social.nombre" class="col-md-3 d-flex flex-column justify-content-center align-items-center">
                                 <img v-if="red_social.icono.includes('/')" :src="`${domainStorage}/${red_social.icono}`"
                                     class="" alt="Facebook Icon" style="width: 40px; height: 40px">
                                 <img v-else :src="`${domain}/img/red_social_default.png`" class="rounded-circle "
