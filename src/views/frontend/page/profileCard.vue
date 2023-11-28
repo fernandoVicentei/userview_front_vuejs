@@ -4,9 +4,9 @@
             <div class="col-lg-12 col-md-12 d-flex justify-content-center"
                 :style="{ backgroundColor: profile.fondo_color ?? '#000000' }">
                 <img v-if="profile.fondo_tarjeta_path" :src="`${domainStorage}/${profile.fondo_tarjeta_path}`"
+                    class="img-fondo-tarjeta" alt="Foto Fondo Tarjeta" style="max-width: 100%;" />
+                <img v-else :src="`${domain}/img/fondo_default_perfil.jpg`" class="img-fondo-tarjeta"
                     alt="Foto Fondo Tarjeta" style="max-width: 100%;" />
-                <img v-else :src="`${domain}/img/fondo_default_perfil.jpg`" alt="Foto Fondo Tarjeta"
-                    style="max-width: 100%;" />
             </div>
             <!-- Perfil del Usuario (Avatar) -->
             <div class="col-lg-12 col-md-12 d-flex justify-content-center">
@@ -24,26 +24,27 @@
                     <button class="btn btn-secondary my-3">Guardar Contacto</button>
                 </div>
             </div>
-            <div class="col-lg-12 col-md-12 mb-4 d-flex justify-content-center">
+            <div class="col-lg-12 col-md-12 d-flex justify-content-center">
                 <div class="card border-primary ">
                     <div class="card-body">
                         <h6 class="card-title text-center">Redes Sociales</h6>
                         <!-- Lista de Redes Sociales -->
-                        <ul class="row">
-                            <li v-for="red_social in profile.redes_sociales" :key="red_social.nombre"
-                                class="col-md-6 d-flex flex-col justify-content-center align-items-center">
+                        <div class="row justify-content-center align-items-center text-center ">
+                            <div v-for="red_social in profile.redes_sociales" :key="red_social.nombre" class="col-md-3">
                                 <img v-if="red_social.icono.includes('/')" :src="`${domainStorage}/${red_social.icono}`"
-                                    class="m-2" alt="Facebook Icon" style="width: 50px; height: 50px;">
-                                <img v-else :src="`${domain}/img/red_social_default.png`" class="m-2 rounded-circle"
-                                    alt="Facebook Icon" style="width: 45px; height: 45px;">
-                                <div class="media-body">
-                                    <h5 class="mt-0">{{ red_social.nombre }}</h5>
-                                </div>
-                            </li>
-                        </ul>
+                                    class="" alt="Facebook Icon" style="width: 40px; height: 40px">
+                                <img v-else :src="`${domain}/img/red_social_default.png`" class="rounded-circle "
+                                    alt="Facebook Icon" style="width: 40px; height: 40px">
+                                <span style="font-size: 13px;">{{ red_social.nombre }}</span>
+                            </div>
+
+                        </div>
 
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-12 col-md-12 d-flex justify-content-center mb-4">
+                <vue-qr :text="`${domain}/${profile.enlace_tarjeta_cliente}`" :size="300"></vue-qr>
             </div>
             <div class="col-lg-12 col-md-12 text-center fixed-bottom" :style="{ backgroundColor: '#000000' }">
                 <h4 style="color: white;" class="yolohago_h3 m-1">Yo lo hago Bolivia</h4>
@@ -56,7 +57,11 @@
 <script>
 import { mapState } from 'vuex'
 import { domainStorage, domain } from './../../../config/rutas';
+import VueQr from 'vue-qr'
 export default {
+    components: {
+        VueQr
+    },
     data() {
         return {
             domainStorage: domainStorage,
@@ -93,7 +98,7 @@ export default {
 
 @media (min-width: 769px) {
     .img-fondo-tarjeta {
-        width: 40%;
+        width: 35%;
     }
 }
 </style>
