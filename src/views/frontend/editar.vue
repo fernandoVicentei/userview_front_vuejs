@@ -6,7 +6,6 @@
                     <div class="navbar-breadcrumb">
                         <h4 class="mb-0">Editar mis Datos</h4>
                     </div>
-                                         
                 </div>
             </div>
             <div class="col-lg-12">
@@ -31,8 +30,9 @@
                                             <label for="exampleInputPassword1">Descripcion (Personal o profesional)*</label>
                                             <textarea class="form-control" rows="1" v-model="descripcion" >
                                             </textarea>
-                                            <small id="" v-if="errorDescripcion"  class="  text-danger">Debe de llenar este campo para actualizar </small>
-                                        </div> 
+                                            <small id="" v-if="errorDescripcion" class="  text-danger">Debe de llenar este
+                                                campo para actualizar </small>
+                                        </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Color (Thema para tu perfil)</label>
                                             <input type="color" 
@@ -50,24 +50,35 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-7 col-12" > 
-                        <div class="card p-1 pt-3 pb-3 border border-1 border-secondary">
+                    <div class="col-md-5 col-12">
+                        <div class="card p-0">
+                            <div class="card-header">
+                                <h6 class="card-title mb-0">Enlace a la tarjeta</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="container-fluid p-2 text-center">
+                                    <button class="btn btn-primary" @click="handleOpenProfileCard">Abrir Tarjeta</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-12">
+                        <div class="card p-0">
                             <div class="card-body p-2">
                                 <h5 class="card-title">Representacion</h5>
-                                <div class="container-fluid p-2" >       
-                                    <div class="row justify-content-center pt-4">  
-                                        <div class="col-md-5 col-6 text-center" >
+                                <div class="container-fluid p-2">
+                                    <div class="row justify-content-center pt-4">
+                                        <div class="col-md-5 col-6 text-center">
                                             <h6>Retrato</h6>
                                             <input type="file" class="d-none"  ref="fileInput" accept="image/x-png,image/jpeg" @change="cargarImagen"  >
                                             <img :src="icono" alt=""   class="border-50 border "  width="80%" height="200px" @click="openFileInput" >                                            
                                         </div>
-                                        <div class="col-md-5 col-6 text-center" >
+                                        <div class="col-md-5 col-6 text-center">
                                             <h6>Portada</h6>
                                             <input type="file" class="d-none"  ref="fileInputPortada" accept="image/x-png,image/jpeg" @change="cargarImagenPortada"  >
                                             <img :src="fondo" alt="" width="100%" height="200px" @click="openFileInputPortada"  >                                            
                                         </div>
-                                    </div>   
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +228,16 @@ export default {
       'b-toast': BToast,
    },
     data() {
-        return {           
+        return {
+            errorNombre: false,
+            errorCargo: false,
+            errorDescripcion: false,
+            nombre: '',
+            descripcion: '',
+            cargo: '',
+            isLoading: false,
+            icono: '',
+            fondo: '',                
             errorNombre:false,
             errorCargo:false,
             errorDescripcion:false,
@@ -507,3 +527,14 @@ export default {
 }
 
 </style>
+    mounted() {
+        this.icono = require('@/img/user.png');
+        this.fondo = require('@/img/fondo.png');
+    },
+    methods: {
+        handleOpenProfileCard() {
+            this.$router.push('/profileCard');
+        }
+    }
+}
+</script>
