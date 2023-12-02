@@ -12,7 +12,7 @@
             <div class="col-lg-12">
                 <div class="row  pt-1">                         
                     <div class="col-md-7 col-12">                             
-                        <div class="card p-0 sombre-contenedor">
+                        <div class="card p-1 pt-3 pb-3 border border-1 border-secondary">
                             <div class="card-body p-2">
                                 <h5 class="card-title">Informacion Personal</h5>
                                 <div class="container-fluid p-2" >                                        
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="col-md-7 col-12" > 
-                        <div class="card p-0 sombre-contenedor">
+                        <div class="card p-1 pt-3 pb-3 border border-1 border-secondary">
                             <div class="card-body p-2">
                                 <h5 class="card-title">Representacion</h5>
                                 <div class="container-fluid p-2" >       
@@ -74,40 +74,39 @@
                     </div>
 
                     <div class="col-md-7 col-12" > 
-                        <div class="card p-0 sombre-contenedor">
+                        <div class="card p-1 pt-3 pb-3 border border-1 border-secondary">
                             <div class="card-body p-2">
                                 <h5 class="card-title">Mis Redes Sociales</h5>
                                 <div class="container-fluid p-2" >       
-                                    <div class="row  p-3">  
-                                         
+                                    <div class="row  p-3"> 
 
-                                        <div class="col-md-3 col-4 text-center  sombra-card " >
+                                        <div class="col-md-3 col-4 text-center fondo-card  " 
+                                            v-for="red in listaMisRedes" :key="red.id"
+                                        >
                                             <div class=" row p-2" >
                                                 <div class="col-12 col-md-12" >
-                                                    <img :src="icono" alt="" width="70%"    class="img-thumbnail">    
+                                                    <img :src="rutaIcono+''+red.icono" alt="" width="70%"    class="img-thumbnail">    
                                                 </div>
                                                 <div class="col-12 col-md-12 text-center" >
-                                                    <p>Facebook</p>    
+                                                    <strong>{{ red.nombre }}</strong>    
                                                 </div>
                                                 <div class="col-4  p-0" > 
-                                                    <button type="button"  @click="verEditarRedSocial" class="btn bg-warning m-0">
+                                                    <button type="button"  @click="verEditarRedSocial(red.id)" class="btn bg-warning m-0">
                                                         <i class="fas fa-edit "></i>
                                                     </button>
                                                 </div>
                                                 <div class="col-4   p-0" > 
-                                                    <button type="button" @click="verRedSocial" class="btn bg-primary m-0">
+                                                    <button type="button" @click="verRedSocial(red.id)" class="btn bg-primary m-0">
                                                         <i class="fas fa-eye"></i>
                                                     </button>
                                                 </div>
                                                 <div class="col-4   p-0" > 
-                                                    <button type="button"  @click="eliminarRedSocial" class="btn bg-danger m-0">                                                       
+                                                    <button type="button"  @click="eliminarRedSocial(red.id)" class="btn bg-danger m-0">                                                       
                                                         <i class="fas fa-trash"></i>
                                                     </button>
                                                 </div>                                                
                                             </div>                                            
-                                        </div>    
-                                        
-                                                                               
+                                        </div>                                                                               
                                     </div>   
                                 </div>
                             </div>
@@ -115,40 +114,38 @@
                     </div>
 
                     <div class="col-md-7 col-12" > 
-                        <div class="card p-0 sombre-contenedor">
+                        <div class="card p-1 pt-3 pb-3 border border-1 border-secondary">
                             <div class="card-body p-2">
                                 <h5 class="card-title">Mas Redes</h5>
                                 <div class="container-fluid p-2" >       
                                     <div class="row  p-3">     
-                                        <div  v-for="(redes, categoria) in listaRedesSociales" :key="categoria"  >                                       
+                                        <div  v-for="(redes, categoria) in listaRedesSociales" :key="categoria" class="col-12 row" >                                       
                                             <div class="col-12 col-md-12 mb-1 p-0"> 
                                                 <strong>{{ categoria }}</strong>
                                             </div>                                        
                                             <div class="col-md-3 col-4 text-center  " 
-                                                        v-for="redSocial in redes" :key="redSocial.id"   @click="nuevaRedSocial(redSocial.nombre,redSocial.id)" >
-                                                <div class=" row p-2" >
+                                                v-for="redSocial in redes" :key="redSocial.id"   @click="nuevaRedSocial(redSocial.nombre,redSocial.id)" >
+                                                <div class=" row p-2 fondo-card  " >
                                                     <div class="col-12 col-md-12" >
                                                         <img :src="rutaIcono+''+redSocial.icono" alt="" width="70%"    class="img-thumbnail">    
                                                     </div>
                                                     <div class="col-12 col-md-12 text-center"  @copy.prevent>
-                                                        <p>{{ redSocial.nombre }}</p>    
+                                                        <strong>{{ redSocial.nombre }}</strong>    
                                                     </div>                                                                                             
                                                 </div>                                            
                                             </div>  
-                                        </div>                                     
-                                                                               
+                                        </div>                            
                                     </div>   
                                 </div>
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>  
             </div>
         </div>
 
         <div>
-           <!--  <b-button v-b-modal.modal-1>Launch demo modal</b-button> -->
             <b-modal v-model="verModal" :title="tituloModal" hide-footer >
                 <form  @submit.prevent="enviarFormulario">
                     <div class="form-group">
@@ -171,7 +168,7 @@
             <b-modal v-model="verModalEliminar" title="Informacion" hide-footer >
                 <div class="" > 
                     <strong>¿ Esta seguro de quitar esta red social ? </strong><br><br>
-                    <button type="submit" class="btn btn-success float-left">Confirmar</button>
+                    <button type="submit" class="btn btn-success float-left" @click="eliminarRed" >Confirmar</button>
                     <button  type="button" class="btn btn-secondary float-right" @click="cerrarModalEliminar" >Cancelar</button>    
                 </div>           
             </b-modal>
@@ -337,18 +334,25 @@ export default {
                 this.verPopUpError(error.message)
             } 
         },
-        verEditarRedSocial(){
+        verEditarRedSocial(idRedSocial){
+            this.idRed= idRedSocial; 
+            let obj =  this.listaMisRedes.find(i => i.id == this.idRed)
+            this.nombreRed = obj.nombre
+            this.enlace = obj.pivot.url_tarjeta_red_social
             this.verModal = true            
         },
-        eliminarRedSocial(){
+        eliminarRedSocial(idRedSocial){
             this.verModalEliminar = true
+            this.idRed = idRedSocial
         },
         cerrarModal(){
             this.verModal= false
             this.errorEnlace= false
+            this.idRed = 0
         },
         cerrarModalEliminar(){
             this.verModalEliminar= false
+            this.idRed = 0
         },
         enviarFormularioRegistro(){
             if(  this.verificarCampos() ){
@@ -393,14 +397,14 @@ export default {
             this.errorNombre = false
             this.errorDescripcion= false;
             this.errorCargo =false;
-            if( this.nombre.length<3 || this.cargo.length<3 || this.descripcion.length<3 ){
-                if( this.nombre.length<3 ){
+            if( this.nombre.trim().length<3 || this.cargo.trim().length<3 || this.descripcion.trim().length<3 ){
+                if( this.nombre.trim().length<3 ){
                     this.errorNombre= true
                 }
-                if(this.cargo.length<3){
+                if(this.cargo.trim().length<3){
                     this.errorCargo = true
                 }
-                if(this.descripcion.length<3){
+                if(this.descripcion.trim().length<3){
                     this.errorDescripcion = true
                 }
                 return false;
@@ -410,10 +414,33 @@ export default {
         },
         async enviarFormulario(){
             if (this.enlace.trim().length >= 5) {
-                  let resultado = await RedService.addRedSocialUser(this.idUsuario,this.idRed);
-                  if(resultado.success){
-                    this.listaMisRedes =  resultado.content
-                  }
+                    let nombreRed = ''
+                    if( this.listaRedesSociales.length>0 ){
+                        nombreRed = this.listaRedesSociales.find(e => e.id == this.idRed)
+                    }                    
+                  if( this.listaMisRedes.filter(e => e.id == this.idRed).length<=0  ){ // ADD                    
+                    let resultado = await RedService.addRedSocialUser(this.idUsuario,this.idRed, this.enlace,nombreRed.nombre);
+                    if(resultado.success){
+                        this.listaMisRedes =  resultado.content;
+                        this.cerrarModal()
+                        this.obtenerInformacionCliente()
+                        this.obtenerRedesSociales()
+                        this.idRed = 0;
+                        this.verPopUpOok('Red Social añadidda correctamente')
+                    }else{
+                        this.verPopUpError('Hubo un problema al añadir la red social. Intentelo nuevamente')
+                    }
+                  }else{ // UPDATE
+                     let update = await RedService.updateNetworkUser(this.idUsuario, this.enlace,this.idRed,nombreRed.nombre);
+                     if( update.success ){
+                        this.verPopUpOok('Red Social actualizada correctamente')
+                        this.idRed =0 
+                        this.cerrarModal()
+                        this.obtenerInformacionCliente()
+                     }else{
+                        this.verPopUpError('No se puedo actualizar el usuario para la red. Intentelo nuevamente')
+                     }
+                  }                  
             }else{                
                 this.errorEnlace=true;                 
             }
@@ -433,17 +460,25 @@ export default {
             } catch (error) {              
                 console.error('Error fetching social media data:', error);
             } 
-        }
-        ,
+        },
+        async eliminarRed(){
+            await RedService.deleteNetworkRedSocialUser(this.idUsuario,this.idRed);  
+            this.verPopUpOok('Red Social eliminada del perfil correctamente.')
+            this.obtenerInformacionCliente()
+            this.verModalEliminar = false;
+            this.idRed = 0
+            this.obtenerRedesSociales()
+        },
         async obtenerInformacionCliente(){
             try {                
                 let profileData = await RedService.getAllDataProfileAdvance(this.idUsuario);              
                 this.nombre = profileData.datos_personales.nombres;
                 this.cargo = profileData.datos_personales.cargo;
                 this.descripcion = profileData.datos_personales.descripcion;
-                this.icono = urlLocalImages +''+ profileData.datos_personales.fondo_perfil_path;
-                this.fondo = urlLocalImages +''+ profileData.datos_personales.fondo_tarjeta_path;
+                this.icono = profileData.datos_personales.fondo_perfil_path== null? this.icono:urlLocalImages +''+ profileData.datos_personales.fondo_perfil_path;
+                this.fondo = profileData.datos_personales.fondo_tarjeta_path== null? this.fondo:urlLocalImages +''+ profileData.datos_personales.fondo_tarjeta_path;
                 this.color = profileData.datos_personales.fondo_color== null? '#000000' : profileData.datos_personales.fondo_color;      
+                this.listaMisRedes = profileData.datos_personales.redes_sociales;
             } catch (error) {              
                 console.error('Error fetching social media data:', error);
             } 
@@ -465,4 +500,10 @@ export default {
 .border-50{
     border-radius: 50%;
 }
+
+.fondo-card{
+    background-color: #e8e8e8;
+   
+}
+
 </style>

@@ -12,7 +12,7 @@
             <div class="col-lg-12">
                 <div class="row justify-content-center pt-4">                         
                     <div class="col-md-7 col-12">                             
-                        <div class="card">
+                        <div class="card border border-1 border-secondary">
                             <div class="card-body">
                                 <h5 class="card-title">Datos Personales</h5>
                                 <div class="container-fluid" > 
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="col-md-7 col-12">                             
-                        <div class="card">
+                        <div class="card border border-1 border-secondary">
                             <div class="card-body">
                                 <h5 class="card-title">Comparte tu Tarjeta</h5>
                                 <div class="container-fluid row" > 
